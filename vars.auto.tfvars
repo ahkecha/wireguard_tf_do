@@ -1,0 +1,6 @@
+digitalocean_token = "PUT_YOUR_TOKEN_HERE"
+private_key = "WIREGUARD_PRIVATE_KEY"
+public_key = "WIREGUARD_PUBLIC_KEY"
+preshared_key = "WIREGUARD_PRESHARED_KEY"
+wireguard_ip_addr = "IPV4, IPV6range of private addresses to use for clients"
+allowed_addr = "allowed ip addresses"
