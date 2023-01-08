@@ -72,6 +72,9 @@ resource "digitalocean_droplet" "vps" {
 	command =<<EOF
 		sed -i "s/^#Port .*/Port ${local.ssh_port}/" /etc/ssh/sshd_config
 		systemctl restart ssh
+		ufw allow ${local.ssh_port}/tcp
+		ufw allow ${local.wg_port}
+		ufw enable
 		adduser --disabled-password --gecos "" w1r3
 		mkdir -p /home/w1r3/.ssh
 		echo "${var.public_key}" >> /home/w1r3/.ssh/authorized_keys
